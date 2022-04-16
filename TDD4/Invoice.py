@@ -42,19 +42,19 @@ class Invoice:
              return userInput
 
 
-    def totalCount(self, products):
+    def totalCount(self, products): # function of the total number of quantities
         total_count = 0
         for k, v in products.items():
-            total_count += (int(v['qnt']))
-            self.total_count = total_count
+            total_count += (int(v['qnt']))  # calculate total quantity
+            self.total_count = total_count   # return total quantity of product.
         return total_count
 
-    def totalRoundImpurePrice(self, products):
+    def totalRoundImpurePrice(self, products): # function total product price and roundup to 2 decimal places
         total_round_impure_price = 0
         for k, v in products.items():
-            total_round_impure_price += float(v['unit_price']) * int(v['qnt'])
-        total_round_impure_price = round(total_round_impure_price, 2)
-        return total_round_impure_price
+            total_round_impure_price += float(v['unit_price']) * int(v['qnt'])  # calculate total product price
+        total_round_impure_price = round(total_round_impure_price, 2) # round the product price to decimal 2.
+        return total_round_impure_price # return values of total product prices
 
     def totalunitprice(self, products):
         total_unit_price = 0
